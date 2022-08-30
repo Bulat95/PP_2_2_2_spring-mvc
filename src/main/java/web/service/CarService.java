@@ -10,4 +10,6 @@ public interface CarService {
 
     List<Car> getlistCarsWithNum(int s);
 
+    void toInitArray();
+
 }

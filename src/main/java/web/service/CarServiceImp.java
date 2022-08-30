@@ -1,6 +1,5 @@
 package web.service;
 
-
 import org.springframework.stereotype.Component;
 import web.model.Car;
 
@@ -10,28 +9,34 @@ import java.util.List;
 @Component
 public class CarServiceImp implements CarService {
 
+    public List<Car> arrCars;
+
     @Override
     public List<Car> getlistCars() {
         Car car = new Car();
-        return car.arrCars;
+        return arrCars;
     }
 
     @Override
     public List<Car> getlistCarsWithNum(int s) {
         List<Car> res = new ArrayList<>();
-        Car car = new Car();
-        car.initArray();
+        toInitArray();
         if (s > 5) {
             return getlistCars();
         }
-        for (Car x : car.arrCars) {
-            if (0 == s) {
-                break;
-            }
-            s--;
-            res.add(x);
+        for (int i = 0; i < s; i++) {
+            res.add(arrCars.get(i));
         }
         return res;
+    }
+
+    public void toInitArray() {
+        arrCars = new ArrayList<>();
+        arrCars.add(new Car("BMW", "5", "e34"));
+        arrCars.add(new Car("Audi", "a8", "D4"));
+        arrCars.add(new Car("Mercedes", "G-Class", "W463"));
+        arrCars.add(new Car("UAZ", "legend", "1"));
+        arrCars.add(new Car("Lada", "1", "1"));
     }
 
 
