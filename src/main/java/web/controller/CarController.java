@@ -12,7 +12,7 @@ import java.util.Optional;
 @Controller
 public class CarController {
 
-    CarServiceImp carServiceImp;
+    private CarServiceImp carServiceImp;
 
     @Autowired
     public void setCarServiceImp(CarServiceImp carServiceImp) {
@@ -20,7 +20,7 @@ public class CarController {
     }
 
     @GetMapping(value = "/cars")
-    public String cars(@RequestParam(value = "count") Optional<Integer> count, Model model) {
+    public String getCars(@RequestParam(value = "count") Optional<Integer> count, Model model) {
         model.addAttribute("cars", carServiceImp.getlistCarsWithNum(count.orElse(0)));
         return "cars";
     }

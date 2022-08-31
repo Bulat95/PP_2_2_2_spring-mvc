@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class CarServiceImp implements CarService {
 
-    public List<Car> arrCars;
+    private List<Car> arrCars;
 
     @Override
     public List<Car> getlistCars() {

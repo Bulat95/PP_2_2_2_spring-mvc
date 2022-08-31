@@ -1,9 +1,9 @@
 package web.model;
 
 public class Car {
-    public String name;
-    public String series;
-    public String mark;
+    private String name;
+    private String series;
+    private String mark;
 
     public Car() {
     }
