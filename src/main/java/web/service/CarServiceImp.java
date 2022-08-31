@@ -30,6 +30,7 @@ public class CarServiceImp implements CarService {
         return res;
     }
 
+    @Override
     public void toInitArray() {
         arrCars = new ArrayList<>();
         arrCars.add(new Car("BMW", "5", "e34"));
